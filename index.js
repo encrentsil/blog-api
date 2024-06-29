@@ -10,9 +10,14 @@ app.use(blogRouter)
 
 dbConnection();
 
-app.listen(5000, () => {
-  console.log('Server is running');
-});
+//Listnig for incoming messages
+const port = process.env.PORT|| 5000;
+  app.listen(port, () => {
+    console.log(`App is running ${port}`)
+  })
 
+//  app.listen(5000, () => {
+//   console.log('App is running');
+//  });
 
 
