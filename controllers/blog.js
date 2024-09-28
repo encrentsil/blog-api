@@ -4,6 +4,7 @@ import { PostModel } from "../models/blog.js";
 
      try {
      const addBlogs = await PostModel.create(req.body);
+     
      res.status(201).json(addBlogs);
     
      } catch (error) {
@@ -45,7 +46,7 @@ export const updateblogs = async (req,res,next) => {
     try {
         const {content,isPublished} = req.body 
         //Update both fields
-        const updatedata= await PostModel.findByIdAndUpdate(req.params.id,{content, isPublished}, {new: true});
+        const updatedata= await ProductModel.findByIdAndUpdate(req.params.id,{content, isPublished}, {new: true});
         
     //  The { new: true } option ensures that the updated document is returned in the response.
        
